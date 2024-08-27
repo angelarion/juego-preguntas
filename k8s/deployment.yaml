@@ -1,1 +1,27 @@
-d
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: php-app
+  template:
+    metadata:
+      labels:
+        app: php-app
+    spec:
+      containers:
+      - name: php-app
+        image: <tu_imagen_php_personalizada>
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: php-app-storage
+          mountPath: /var/www/html
+          subPath: ../src
+      volumes:
+      - name: php-app-storage
+        persistentVolumeClaim:
+          claimName: php-app-pvc
