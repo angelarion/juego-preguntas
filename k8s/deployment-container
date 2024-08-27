@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-app-deployment
+  labels:
+    app: php-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: php-app
+  template:
+    metadata:
+      labels:
+        app: php-app
+    spec:
+      containers:
+      - name: php-app-container
+        image: image-registry.openshift-image-registry.svc:5000/demo1-mtp/app-juego-ui  # Reemplaza con la ruta a tu imagen Docker
+        ports:
+        - containerPort: 80  # Exponer el puerto 80 en el contenedor
