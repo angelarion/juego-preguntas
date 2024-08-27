@@ -1,0 +1,10 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: php-app-route
+spec:
+  to:
+    kind: Service
+    name: php-app-service
+  port:
+    targetPort: 80
