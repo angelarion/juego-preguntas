@@ -2,7 +2,7 @@
 FROM php:8.2-apache
 
 # Copia el código de la aplicación al contenedor
-COPY src/ /var/www/html/
+#COPY src/ /var/www/html/
 
 # Configura el directorio de trabajo
 WORKDIR /var/www/html/
