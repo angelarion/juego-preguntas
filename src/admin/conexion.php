@@ -17,6 +17,4 @@ if(!$conn){
 if(!$conn){
 	die("Conexión fallida:" . mysqli_connect_error());
 }
-
 ?>
-
