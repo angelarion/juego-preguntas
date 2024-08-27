@@ -2,7 +2,7 @@
 //datos del servidor
 $server		="localhost";
 $username	="root";
-$password	="";
+$password	="rootpassword";
 $bd			="bd_quiz";
 
 //creamos una conexión
