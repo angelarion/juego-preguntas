@@ -1,6 +1,11 @@
 # Usa la imagen oficial de PHP con Apache como base
 FROM php:8.2-apache
 
+# Instala la extensión mysqli
+RUN docker-php-ext-install mysqli
+
+# Habilita la extensión mysqli
+RUN docker-php-ext-enable mysqli
 # Configura el directorio de trabajo en el contenedor
 WORKDIR /var/www/html/
 
