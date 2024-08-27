@@ -9,3 +9,6 @@ WORKDIR /var/www/html/
 
 # Expone el puerto 80 para el servidor Apache
 EXPOSE 80
+
+# Iniciar Apache en primer plano
+CMD ["apache2-foreground"]
