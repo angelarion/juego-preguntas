@@ -7,6 +7,10 @@ FROM php:8.2-apache
 # Configura el directorio de trabajo
 WORKDIR /var/www/html/
 
+# Otorga permisos a la carpeta /var/www/html
+RUN chown -R www-data:www-data /var/www/html/ && \
+    chmod -R 755 /var/www/html/
+
 # Expone el puerto 80 para el servidor Apache
 EXPOSE 80
 
