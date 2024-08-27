@@ -3,7 +3,7 @@
 $server		="mysql-service";
 $username	="root";
 $password	="rootpassword";
-$bd			="bd_quiz";
+$bd		="bd_quiz";
 
 //creamos una conexión
 $conn = mysqli_connect($server, $username, $password, $bd);
