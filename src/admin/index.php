@@ -10,9 +10,7 @@ include("funciones.php");
 
 $totalPreguntas = obtenerTotalPreguntas();
 $categorias =  obtenerCategorias();
-
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 
