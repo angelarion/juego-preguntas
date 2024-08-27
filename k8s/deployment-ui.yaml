@@ -23,7 +23,9 @@ spec:
         volumeMounts:
         - name: php-app-storage
           mountPath: /var/www/html
-          subPath: src
+        securityContext:
+          runAsUser: 0 # Ejecutar como root para asegurar permisos de escritura
+        command: ["/bin/sh", "-c", "cp -R /mnt/src/* /var/www/html && httpd-foreground"]
       volumes:
       - name: php-app-storage
         persistentVolumeClaim:
