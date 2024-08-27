@@ -1,6 +1,6 @@
 <?php
 //datos del servidor
-$server		="localhost";
+$server		="mysql-service";
 $username	="root";
 $password	="rootpassword";
 $bd		="bd_quiz";
