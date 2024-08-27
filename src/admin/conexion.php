@@ -1,6 +1,6 @@
 <?php
 //datos del servidor
-$server		="mysql-service-app-juego.demo1-mtp.svc.cluster.local";
+$server		="mysql-service";
 $username	="root";
 $password	="rootpassword";
 $bd			="bd_quiz";
