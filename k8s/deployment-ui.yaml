@@ -23,7 +23,6 @@ spec:
         volumeMounts:
         - name: php-app-storage
           mountPath: /var/www/html
-          #subPath: ../src
       volumes:
       - name: php-app-storage
         persistentVolumeClaim:
