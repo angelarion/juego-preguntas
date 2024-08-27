@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: php-app-service
   labels:
-    app: mysql
+    app: php-app
 spec:
   selector:
     app: php-app
