@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 // session_destroy();
@@ -53,7 +52,7 @@ if(isset($_GET['idCategoria'])){
             </div>
         </div>
         <footer>
-            <a href="https://www.youtube.com/techcare">By Código Web  <i class="fa-brands fa-youtube"></i> </a>
+            <a href="https://www.youtube.com/techcare">By Código DEMO GENUP-IT  <i class="fa-brands fa-youtube"></i> </a>
         </footer>
     </div>
 </body>
