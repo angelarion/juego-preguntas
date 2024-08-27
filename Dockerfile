@@ -2,10 +2,34 @@
 FROM php:7.4-apache
 
 # Instala la extensión mysqli
-RUN docker-php-ext-install mysqli
+#RUN docker-php-ext-install mysqli
 
 # Habilita la extensión mysqli
-RUN docker-php-ext-enable mysqli
+#RUN docker-php-ext-enable mysqli
+# Actualiza el índice de paquetes y instala paquetes necesarios
+RUN apt-get update && apt-get install -y \
+    libpng-dev \
+    libjpeg-dev \
+    libfreetype6-dev \
+    libzip-dev \
+    libicu-dev \
+    unzip \
+    && rm -rf /var/lib/apt/lists/*
+
+# Instala las extensiones de PHP
+RUN docker-php-ext-install \
+    mysqli \
+    pdo \
+    pdo_mysql \
+    mbstring \
+    zip \
+    gd \
+    intl
+
+# (Opcional) Instala y habilita extensiones de PECL
+RUN pecl install xdebug \
+    && docker-php-ext-enable xdebug
+    
 # Configura el directorio de trabajo en el contenedor
 WORKDIR /var/www/html/
 
