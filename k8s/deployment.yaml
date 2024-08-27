@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: php-app
-        image: <tu_imagen_php_personalizada>
+        image: image-registry.openshift-image-registry.svc:5000/demo1-mtp/app-juego-ui
         ports:
         - containerPort: 80
         volumeMounts:
