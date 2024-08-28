@@ -54,9 +54,8 @@ if(isset($_GET['idCategoria'])){
             </div>
         </div>
         <footer>
-            <a href="https://www.youtube.com/techcare">By Código DEMO GENUP-IT  <i class="fa-brands fa-youtube"></i> </a>
-                            <h1>Información del Pod</h1>
-                <p>El hostname del Pod es: <?php echo gethostname(); ?></p>
+            <a href="https://www.youtube.com/techcare">By Código DEMO GENUP-IT  <i class="fa-brands fa-youtube"></i> Información del Pod <?php echo gethostname(); ?> </a>
+
         </footer>
     </div>
 </body>
