@@ -35,8 +35,7 @@ if(isset($_GET['idCategoria'])){
                 Juego Rapido
             </div>
             <h2>PON A PRUEBA TUS CONOCIMIENTOS!!</h2>
-                <h1>Información del Pod</h1>
-                <p>El hostname del Pod es: <?php echo gethostname(); ?></p>
+
            
         </div>
         <div class="right">
@@ -56,6 +55,8 @@ if(isset($_GET['idCategoria'])){
         </div>
         <footer>
             <a href="https://www.youtube.com/techcare">By Código DEMO GENUP-IT  <i class="fa-brands fa-youtube"></i> </a>
+                            <h1>Información del Pod</h1>
+                <p>El hostname del Pod es: <?php echo gethostname(); ?></p>
         </footer>
     </div>
 </body>
