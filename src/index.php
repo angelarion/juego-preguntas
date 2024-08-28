@@ -35,10 +35,9 @@ if(isset($_GET['idCategoria'])){
                 Juego Rapido
             </div>
             <h2>PON A PRUEBA TUS CONOCIMIENTOS!!</h2>
-            <body>
                 <h1>Información del Pod</h1>
                 <p>El hostname del Pod es: <?php echo gethostname(); ?></p>
-            </body>
+           
         </div>
         <div class="right">
             <h3>Elige una categoría</h3>
