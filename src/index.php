@@ -54,7 +54,7 @@ if(isset($_GET['idCategoria'])){
             </div>
         </div>
         <footer>
-            <a href="https://www.youtube.com/techcare">By Código DEMO GENUP-IT  <i class="fa-brands fa-youtube"></i> Información del Pod <?php echo gethostname(); ?> </a>
+            <a href="http://www.genup-it.com/">By Código DEMO GENUP-IT  <i class="fa-brands fa-youtube"></i> Información del Pod <?php echo gethostname(); ?> </a>
 
         </footer>
     </div>
