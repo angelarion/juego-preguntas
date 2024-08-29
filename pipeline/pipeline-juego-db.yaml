@@ -8,17 +8,17 @@ spec:
   params:
   - name: deployment-name
     type: string
-    description: name of the deployment to be patched
+    description: Nombre de la implementación que se va a parchar
   - name: git-url
     type: string
-    description: url of the git repo for the code of deployment
+    description: URL del repositorio git para el código de implementación
   - name: git-revision
     type: string
-    description: revision to be used from repo of the code for deployment
+    description: Revisión que se utilizará desde el repositorio del código para la implementación.
     default: main
   - name: IMAGE
     type: string
-    description: image to be build from the code
+    description: imagen a construir a partir del código
   tasks:
   - name: fetch-repository
     taskRef:
