@@ -2,7 +2,7 @@
 apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
-  name: pipeline-demo1-db
+  name: pipeline-demo1-iu
 spec:
   workspaces:
   - name: shared-workspace
