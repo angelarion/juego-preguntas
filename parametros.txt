@@ -1,2 +1,16 @@
+Para PHP hay que dale permisos para ue puede
+
+Recordomes que para crear puertos tenemos que dar permisos:
+
+Si no nos data el sigueinte error al crear uncontender de PHP :
+-------------------------------
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 10.232.0.81. Set the 'ServerName' directive globally to suppress this message
+(13)Permission denied: AH00072: make_sock: could not bind to address [::]:80
+(13)Permission denied: AH00072: make_sock: could not bind to address 0.0.0.0:80
+no listening sockets available, shutting down
+AH00015: Unable to open logs
+------------------------------
+
+
 git-url: https://github.com/angelarion/juego-preguntas-iu.git
 IMAGE: image-registry.openshift-image-registry.svc:5000/$(context.pipelineRun.namespace)/app-juego-iu
