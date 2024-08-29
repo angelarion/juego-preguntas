@@ -1,0 +1,2 @@
+git-url: https://github.com/angelarion/juego-preguntas-iu.git
+IMAGE: image-registry.openshift-image-registry.svc:5000/$(context.pipelineRun.namespace)/app-juego-iu
