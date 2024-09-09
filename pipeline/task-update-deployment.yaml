@@ -5,20 +5,38 @@ metadata:
 spec:
   params:
     - name: deployment
-      description: The name of the deployment patch the image
+      description: The name of the deployment to patch with the new image
       type: string
     - name: IMAGE
-      description: Location of image to be patched with
+      description: The full location of the new image to be used
       type: string
   steps:
-    - name: patch
+    - name: check-deployment
       image: image-registry.openshift-image-registry.svc:5000/openshift/cli:latest
-      command: ["/bin/bash", "-c"]
-      args:
-        - |-
-          oc patch deployment $(inputs.params.deployment) --patch='{"spec":{"template":{"spec":{
-            "containers":[{
-              "name": "$(inputs.params.deployment)",
-              "image":"$(inputs.params.IMAGE)"
-            }]
-          }}}}'
+      script: |
+        set -e
+        # Check if the deployment exists
+        if ! oc get deployment $(params.deployment); then
+          echo "Error: Deployment $(params.deployment) not found."
+          exit 1
+        fi
+    - name: update-image
+      image: image-registry.openshift-image-registry.svc:5000/openshift/cli:latest
+      script: |
+        set -e
+        # Patch the deployment to update the image
+        oc patch deployment $(params.deployment) --type='json' -p='[
+          {
+            "op": "replace",
+            "path": "/spec/template/spec/containers/0/image",
+            "value": "$(params.IMAGE)"
+          }
+        ]'
+    - name: delete-pods
+      image: image-registry.openshift-image-registry.svc:5000/openshift/cli:latest
+      script: |
+        set -e
+        # Delete all pods of the deployment to recreate them with the new image
+        # oc delete pod -l app=php-app
+        echo "Este paso hace que se reinice los PODS del --> $(params.deployment)"
+        oc rollout restart deployment  $(params.deployment)
